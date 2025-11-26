@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { Session } from '../../../../core/models/session.interface';
 import { SessionApiService } from '../../../../core/service/session-api.service';
 import { MaterialModule } from "../../../../shared/material.module";
 import { CommonModule } from "@angular/common";
+import { Subject, takeUntil, catchError, of, EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -15,7 +16,7 @@ import { CommonModule } from "@angular/common";
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private fb = inject(FormBuilder);
   private matSnackBar = inject(MatSnackBar);
@@ -29,9 +30,12 @@ export class FormComponent implements OnInit {
   public teachers$ = this.teacherService.all();
   private id: string | undefined;
 
+  private destroy$ = new Subject<void>();
+
   ngOnInit(): void {
     if (!this.sessionService.sessionInformation!.admin) {
       this.router.navigate(['/sessions']);
+      return;
     }
     const url = this.router.url;
     if (url.includes('update')) {
@@ -39,25 +43,50 @@ export class FormComponent implements OnInit {
       this.id = this.route.snapshot.paramMap.get('id')!;
       this.sessionApiService
         .detail(this.id)
-        .subscribe((session: Session) => this.initForm(session));
+        .pipe(takeUntil(this.destroy$),
+              catchError(err => {
+               this.matSnackBar.open('Erreur lors du chargement de la session', 'Close', { duration: 3000 });
+               return EMPTY;
+              })
+        )
+        .subscribe((session: Session | undefined) => {
+           if (session) this.initForm(session);
+        });
     } else {
       this.initForm();
     }
   }
 
   public submit(): void {
-    const session = this.sessionForm?.value as Session;
+      const session = this.sessionForm?.value as Session;
+      if (!session) return;
 
-    if (!this.onUpdate) {
-      this.sessionApiService
+      if (!this.onUpdate) {
+        this.sessionApiService
         .create(session)
-        .subscribe((_: Session) => this.exitPage('Session created !'));
-    } else {
-      this.sessionApiService
+        .pipe(takeUntil(this.destroy$),
+            catchError(err => {
+              this.matSnackBar.open('Erreur lors de la création de la session', 'Close', { duration: 3000 });
+              return EMPTY;
+            })
+          )
+          .subscribe((_created: Session | undefined) => {
+            if (_created) this.exitPage('Session created !');
+          });
+      } else {
+        this.sessionApiService
         .update(this.id!, session)
-        .subscribe((_: Session) => this.exitPage('Session updated !'));
+        .pipe(takeUntil(this.destroy$),
+            catchError(err => {
+              this.matSnackBar.open('Erreur lors de la mise à jour de la session', 'Close', { duration: 3000 });
+              return EMPTY;
+            })
+          )
+          .subscribe((_updated: Session | undefined) => {
+            if (_updated) this.exitPage('Session updated !');
+          });
+      }
     }
-  }
 
   private initForm(session?: Session): void {
     this.sessionForm = this.fb.group({
@@ -87,4 +116,10 @@ export class FormComponent implements OnInit {
     this.matSnackBar.open(message, 'Close', { duration: 3000 });
     this.router.navigate(['sessions']);
   }
+
+  ngOnDestroy(): void {
+      this.destroy$.next();
+      this.destroy$.complete();
+    }
+
 }
