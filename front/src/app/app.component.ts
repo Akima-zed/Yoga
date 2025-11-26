@@ -17,8 +17,8 @@ export class AppComponent {
   private router = inject(Router);
   private sessionService = inject(SessionService);
 
-  public $isLogged(): Observable<boolean> {
-    return this.sessionService.$isLogged();
+  public $isLogged(): Observable<boolean> {  // Le async pipe gère automatiquement l'abonnement et le désabonnement
+    return this.sessionService.$isLogged();  // ,donc pas besoin de takeUntil ici
   }
 
   public logout(): void {
