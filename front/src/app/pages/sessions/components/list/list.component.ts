@@ -18,6 +18,7 @@ export class ListComponent {
   private sessionApiService = inject(SessionApiService);
   private sessionService = inject(SessionService);
 
+  // consommé directement dans le template via (sessions$ | async).
   public sessions$: Observable<Session[]> = this.sessionApiService.all();
 
   get user(): SessionInformation | undefined {
