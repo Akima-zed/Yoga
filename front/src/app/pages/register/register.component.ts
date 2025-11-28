@@ -9,6 +9,7 @@ import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
