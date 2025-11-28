@@ -11,6 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
