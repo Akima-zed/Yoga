@@ -10,6 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-me',
+  standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './me.component.html',
   styleUrls: ['./me.component.scss']
