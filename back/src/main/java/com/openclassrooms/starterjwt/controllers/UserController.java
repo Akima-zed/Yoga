@@ -10,6 +10,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+
+/**
+ * Controller pour gérer les utilisateurs (lecture / suppression).
+ */
 @RestController
 @RequestMapping("/api/user")
 public class UserController {

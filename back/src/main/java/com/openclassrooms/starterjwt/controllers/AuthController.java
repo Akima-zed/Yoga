@@ -21,6 +21,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
+/**
+ * Controller pour l'authentification et l'inscription des utilisateurs.
+ * Toutes les opérations sont déléguées aux services.
+ */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -40,6 +46,12 @@ public class AuthController {
         this.userService = userService;
     }
 
+    /**
+     * Authentifie un utilisateur et retourne un JWT.
+     *
+     * @param loginRequest email et mot de passe
+     * @return JwtResponse avec token et informations utilisateur
+     */
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -63,6 +75,13 @@ public class AuthController {
         ));
     }
 
+
+    /**
+     * Inscrit un nouvel utilisateur.
+     *
+     * @param signUpRequest informations de l'utilisateur
+     * @return MessageResponse confirmation
+     */
     @PostMapping("/register")
     public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 

@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+/**
+ * Controller pour gérer les enseignants.
+ */
 @RestController
 @RequestMapping("/api/teacher")
 public class TeacherController {

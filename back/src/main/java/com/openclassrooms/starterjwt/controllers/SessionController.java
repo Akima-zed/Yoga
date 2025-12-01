@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller pour gérer les sessions (CRUD + participation).
+ */
 @RestController
 @RequestMapping("/api/session")
 public class SessionController {
