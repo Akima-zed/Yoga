@@ -1,39 +1,35 @@
 package com.openclassrooms.starterjwt.controllers;
 
-import com.openclassrooms.starterjwt.exception.NotFoundException;
+import com.openclassrooms.starterjwt.dto.TeacherDto;
 import com.openclassrooms.starterjwt.mapper.TeacherMapper;
 import com.openclassrooms.starterjwt.models.Teacher;
 import com.openclassrooms.starterjwt.services.TeacherService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/teacher")
 public class TeacherController {
-    private final TeacherMapper teacherMapper;
-    private final TeacherService teacherService;
 
+    private final TeacherService teacherService;
+    private final TeacherMapper teacherMapper;
 
     public TeacherController(TeacherService teacherService,
                              TeacherMapper teacherMapper) {
-        this.teacherMapper = teacherMapper;
         this.teacherService = teacherService;
+        this.teacherMapper = teacherMapper;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable String id) {
-        Teacher teacher = teacherService.findById(Long.valueOf(id));
-        if (teacher == null) throw new NotFoundException("Teacher not found");
+    public ResponseEntity<TeacherDto> findById(@PathVariable Long id) {
+        Teacher teacher = teacherService.findById(id);
         return ResponseEntity.ok(teacherMapper.toDto(teacher));
     }
 
     @GetMapping
-    public ResponseEntity<List<?>> findAll() {
+    public ResponseEntity<List<TeacherDto>> findAll() {
         return ResponseEntity.ok(teacherMapper.toDto(teacherService.findAll()));
     }
 }

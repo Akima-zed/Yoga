@@ -1,28 +1,21 @@
 package com.openclassrooms.starterjwt.controllers;
 
-import com.openclassrooms.starterjwt.exception.BadRequestException;
-import com.openclassrooms.starterjwt.exception.NotFoundException;
+import com.openclassrooms.starterjwt.dto.UserDto;
+import com.openclassrooms.starterjwt.exception.UnauthorizedException;
 import com.openclassrooms.starterjwt.mapper.UserMapper;
 import com.openclassrooms.starterjwt.models.User;
 import com.openclassrooms.starterjwt.services.UserService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Objects;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+
     private final UserMapper userMapper;
     private final UserService userService;
-
 
     public UserController(UserService userService,
                           UserMapper userMapper) {
@@ -31,23 +24,21 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable String id) {
-        User user = userService.findById(Long.valueOf(id));
-        if (user == null) throw new NotFoundException("User not found");
+    public ResponseEntity<UserDto> findById(@PathVariable Long id) {
+        User user = userService.findById(id); // NotFoundException si absent
         return ResponseEntity.ok(userMapper.toDto(user));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id) {
-        User user = userService.findById(Long.valueOf(id));
-        if (user == null) throw new NotFoundException("User not found");
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        User user = userService.findById(id);
 
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (!Objects.equals(userDetails.getUsername(), user.getEmail())) {
-            throw new BadRequestException("Unauthorized action");
+        if (!userDetails.getUsername().equals(user.getEmail())) {
+            throw new UnauthorizedException("Action non autorisée");
         }
 
-        userService.delete(Long.valueOf(id));
+        userService.delete(id);
         return ResponseEntity.ok().build();
     }
 }
