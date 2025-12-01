@@ -1,5 +1,6 @@
 package com.openclassrooms.starterjwt.controllers;
 
+import com.openclassrooms.starterjwt.exception.NotFoundException;
 import com.openclassrooms.starterjwt.mapper.TeacherMapper;
 import com.openclassrooms.starterjwt.models.Teacher;
 import com.openclassrooms.starterjwt.services.TeacherService;
@@ -25,24 +26,14 @@ public class TeacherController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable("id") String id) {
-        try {
-            Teacher teacher = this.teacherService.findById(Long.valueOf(id));
-
-            if (teacher == null) {
-                return ResponseEntity.notFound().build();
-            }
-
-            return ResponseEntity.ok().body(this.teacherMapper.toDto(teacher));
-        } catch (NumberFormatException e) {
-            return ResponseEntity.badRequest().build();
-        }
+    public ResponseEntity<?> findById(@PathVariable String id) {
+        Teacher teacher = teacherService.findById(Long.valueOf(id));
+        if (teacher == null) throw new NotFoundException("Teacher not found");
+        return ResponseEntity.ok(teacherMapper.toDto(teacher));
     }
 
-    @GetMapping()
-    public ResponseEntity<?> findAll() {
-        List<Teacher> teachers = this.teacherService.findAll();
-
-        return ResponseEntity.ok().body(this.teacherMapper.toDto(teachers));
+    @GetMapping
+    public ResponseEntity<List<?>> findAll() {
+        return ResponseEntity.ok(teacherMapper.toDto(teacherService.findAll()));
     }
 }
