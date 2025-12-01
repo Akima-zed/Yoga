@@ -12,6 +12,7 @@ import { Subject, takeUntil, catchError, of, EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-form',
+  standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
