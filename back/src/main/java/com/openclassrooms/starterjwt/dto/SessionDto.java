@@ -1,7 +1,6 @@
 package com.openclassrooms.starterjwt.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,13 +20,13 @@ public class SessionDto {
     @Size(max = 50)
     private String name;
 
-    @NotNull
+    
     private Date date;
 
-    @NotNull
+    
     private Long teacher_id;
 
-    @NotNull
+   
     @Size(max = 2500)
     private String description;
 

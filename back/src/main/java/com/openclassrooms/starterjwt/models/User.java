@@ -15,8 +15,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -36,7 +34,6 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(of = {"id"})
 @Builder
 @NoArgsConstructor
-@RequiredArgsConstructor
 @AllArgsConstructor
 @ToString
 public class User {
@@ -44,28 +41,28 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
+    
     @Size(max = 50)
     @Email
     @Column(nullable = false)
     private String email;
 
-    @NonNull
+    
     @Size(max = 20)
     @Column(nullable = false)
     private String lastName;
 
-    @NonNull
+    
     @Size(max = 20)
     @Column(nullable = false)
     private String firstName;
 
-    @NonNull
+    
     @Size(max = 120)
     @Column(nullable = false)
     private String password;
 
-    @NonNull
+    
     private boolean admin;
 
     @CreatedDate
