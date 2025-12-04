@@ -25,6 +25,12 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
+    /**
+     * Filtre qui extrait le token JWT de l'en-tête Authorization, valide
+     * le token, charge les détails de l'utilisateur et place une
+     * authentification dans le contexte de sécurité pour la requête en cours.
+     */
+
     @Override
 protected void doFilterInternal(
         @org.springframework.lang.NonNull HttpServletRequest request,

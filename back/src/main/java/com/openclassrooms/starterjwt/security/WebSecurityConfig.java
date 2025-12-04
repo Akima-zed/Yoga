@@ -21,6 +21,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
+    /**
+     * Configuration de sécurité Web pour l'application.
+     *
+     * <p>Déclare les beans nécessaires à l'authentification JWT, le
+     * password encoder et la chaîne de filtres Spring Security.</p>
+     *
+     * <p>Les routes `/api/auth/**` sont publiques ; les autres routes sous
+     * `/api/**` nécessitent une authentification.</p>
+     */
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -40,11 +49,14 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @SuppressWarnings("deprecation")
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
-    DaoAuthenticationProvider provider = new DaoAuthenticationProvider(passwordEncoder());
-    provider.setUserDetailsService(userDetailsService);
-    return provider;
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        // Le provider a besoin d'un PasswordEncoder et d'un UserDetailsService
+        provider.setPasswordEncoder(passwordEncoder());
+        provider.setUserDetailsService(userDetailsService);
+        return provider;
     }
 
 
