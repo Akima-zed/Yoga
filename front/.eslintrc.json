@@ -35,6 +35,19 @@
     },
     {
       "files": [
+        "*.spec.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": [
         "*.html"
       ],
       "extends": [
@@ -45,3 +58,4 @@
     }
   ]
 }
+

@@ -24,4 +24,10 @@ module.exports = {
   moduleDirectories: [
     "node_modules"
   ],
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.(html|svg)$',
+    },
+  },
 };
