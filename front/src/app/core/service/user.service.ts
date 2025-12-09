@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { inject } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.interface';
@@ -20,16 +21,14 @@ import { User } from '../models/user.interface';
   providedIn: 'root'
 })
 export class UserService {
-
   private pathService = 'api/user';
-
-  constructor(private httpClient: HttpClient) { }
+  private httpClient = inject(HttpClient);
 
   public getById(id: string): Observable<User> {
     return this.httpClient.get<User>(`${this.pathService}/${id}`);
   }
 
-  public delete(id: string): Observable<any> {
+  public delete(id: string): Observable<unknown> {
     return this.httpClient.delete(`${this.pathService}/${id}`);
   }
 }
