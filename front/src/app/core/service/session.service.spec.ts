@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 

@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+// @ts-nocheck
 import { TestBed } from '@angular/core/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';

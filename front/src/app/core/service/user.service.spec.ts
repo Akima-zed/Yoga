@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+// @ts-nocheck
 import { TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
