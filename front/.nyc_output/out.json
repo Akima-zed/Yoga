@@ -1,0 +1,614 @@
+{
+  "C:/Users/Utilisateur/.vscode/Yoga/front/jest.config.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/jest.config.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/webpack.config.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/webpack.config.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/block-navigation.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/block-navigation.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/prettify.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/prettify.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/sorter.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/lcov-report/sorter.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/block-navigation.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/block-navigation.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/prettify.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/prettify.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/sorter.js": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/coverage/jest/lcov-report/sorter.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress.config.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress.config.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/jest-setup.d.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/jest-setup.d.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/jest.d.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/jest.d.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/setup-jest.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/setup-jest.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/test-config.helper.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/test-config.helper.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/coverage.webpack.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/coverage.webpack.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/main.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/main.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/polyfills.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/polyfills.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/account.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/account.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/login.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/login.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/logout.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/logout.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/register.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/register.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-create.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-create.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-delete.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-delete.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-detail.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-detail.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-edit.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/session-edit.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/sessions.cy.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/e2e/sessions.cy.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/plugins/index.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/plugins/index.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/support/commands.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/support/commands.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/support/e2e.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/cypress/support/e2e.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.config.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.config.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.routes.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/app.routes.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/environments/environment.prod.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/environments/environment.prod.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/environments/environment.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/environments/environment.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/guards/auth.guard.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/guards/auth.guard.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/guards/unauth.guard.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/guards/unauth.guard.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/interceptors/customJwtInterceptorFn.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/interceptors/customJwtInterceptorFn.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/shared/material.module.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/shared/material.module.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/components/me/me.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/components/me/me.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/components/me/me.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/components/me/me.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/loginRequest.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/loginRequest.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/registerRequest.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/registerRequest.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/session.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/session.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/sessionInformation.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/sessionInformation.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/teacher.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/teacher.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/user.interface.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/models/user.interface.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/auth.service.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/auth.service.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/auth.service.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/auth.service.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session-api.service.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session-api.service.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session-api.service.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session-api.service.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session.service.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session.service.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session.service.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/session.service.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/teacher.service.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/teacher.service.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/teacher.service.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/teacher.service.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/user.service.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/user.service.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/user.service.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/core/service/user.service.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/login/login.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/login/login.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/login/login.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/login/login.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/not-found/not-found.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/not-found/not-found.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/not-found/not-found.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/not-found/not-found.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/register/register.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/register/register.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/register/register.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/register/register.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/detail/detail.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/detail/detail.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/detail/detail.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/detail/detail.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/form/form.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/form/form.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/form/form.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/form/form.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/list/list.component.spec.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/list/list.component.spec.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/list/list.component.ts": {
+    "path": "C:/Users/Utilisateur/.vscode/Yoga/front/src/app/pages/sessions/components/list/list.component.ts",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  }
+}

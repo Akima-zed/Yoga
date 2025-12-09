@@ -72,7 +72,7 @@
               "namedChunks": true,
               "vendorChunk": true,
               "customWebpackConfig": {
-                "path": "./cypress/coverage.webpack.ts"
+                "path": "webpack.config.js"
               }
             }
           },
@@ -91,6 +91,9 @@
             "development": {
               "buildTarget": "yoga:build:development",
               "proxyConfig": "proxy.conf.json"
+            },
+            "e2e": {
+              "buildTarget": "yoga:build:e2e"
             }
           },
           "defaultConfiguration": "development"
@@ -98,7 +101,10 @@
         "serve-coverage": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "buildTarget": "yoga:build:e2e"
+            "buildTarget": "yoga:build:e2e",
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           }
         },
         "extract-i18n": {

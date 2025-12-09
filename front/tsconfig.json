@@ -22,8 +22,9 @@
       "es2020",
       "dom"
     ],
-    "types": ["jest", "node"],
-    "ignoreDeprecations": "6.0"
+    "types": ["jest", "node"]
+      ,
+      "ignoreDeprecations": "6.0"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

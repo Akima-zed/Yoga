@@ -28,6 +28,16 @@ export class SessionService {
 
   private isLoggedSubject = new BehaviorSubject<boolean>(this.isLogged);
 
+  constructor() {
+    // Synchronise la session au démarrage
+    const session = localStorage.getItem('sessionInformation');
+    if (session) {
+      this.sessionInformation = JSON.parse(session);
+      this.isLogged = true;
+      this.next();
+    }
+  }
+
   public $isLogged(): Observable<boolean> {
     return this.isLoggedSubject.asObservable();
   }
@@ -35,12 +45,14 @@ export class SessionService {
   public logIn(user: SessionInformation): void {
     this.sessionInformation = user;
     this.isLogged = true;
+    localStorage.setItem('sessionInformation', JSON.stringify(user));
     this.next();
   }
 
   public logOut(): void {
     this.sessionInformation = undefined;
     this.isLogged = false;
+    localStorage.removeItem('sessionInformation');
     this.next();
   }
 
