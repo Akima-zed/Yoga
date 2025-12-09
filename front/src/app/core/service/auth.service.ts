@@ -5,6 +5,19 @@ import { LoginRequest } from '../models/loginRequest.interface';
 import { RegisterRequest } from '../models/registerRequest.interface';
 import { SessionInformation } from 'src/app/core/models/sessionInformation.interface';
 
+/**
+ * AuthService - Gestion de l'authentification
+ *
+ * Service responsable de:
+ * - Enregistrement d'un nouvel utilisateur
+ * - Connexion d'un utilisateur existant
+ * - Communication avec l'API d'authentification
+ *
+ * @injectable
+ * @example
+ * constructor(private authService: AuthService) { }
+ * this.authService.login(credentials).subscribe(...);
+ */
 @Injectable({
   providedIn: 'root'
 })

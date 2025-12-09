@@ -13,6 +13,22 @@ import { TeacherService } from '../../../../core/service/teacher.service';
 import { MaterialModule } from "../../../../shared/material.module";
 import { CommonModule } from "@angular/common";
 
+/**
+ * DetailComponent - Détails d'une séance
+ *
+ * Affiche les détails complets d'une séance de yoga:
+ * - Informations générales (titre, date, description)
+ * - Nom du professeur responsable
+ * - Nombre de participants
+ * - Actions: participer, annuler participation, supprimer (admin)
+ * - Navigation vers la liste des séances
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'detail/:id', component: DetailComponent }
+ */
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',

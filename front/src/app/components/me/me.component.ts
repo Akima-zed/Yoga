@@ -8,6 +8,20 @@ import { MaterialModule } from "../../shared/material.module";
 import { CommonModule } from "@angular/common";
 import { Subject, takeUntil } from 'rxjs';
 
+/**
+ * MeComponent - Profil utilisateur
+ *
+ * Affiche les informations de l'utilisateur connecté et permet:
+ * - Consulter son profil
+ * - Supprimer son compte
+ * - Revenir à la page précédente
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'me', component: MeComponent }
+ */
 @Component({
   selector: 'app-me',
   standalone: true,
@@ -25,16 +39,29 @@ export class MeComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    // Récupère l'utilisateur depuis la session et subscribe
+    // avec takeUntil pour nettoyer les subscriptions à la destruction
     this.userService
       .getById(this.sessionService.sessionInformation!.id.toString())
       .pipe(takeUntil(this.destroy$))
       .subscribe((user: User) => this.user = user);
   }
 
+  /**
+   * Revient à la page précédente dans l'historique du navigateur
+   *
+   * @returns void
+   */
   public back(): void {
     window.history.back();
   }
 
+  /**
+   * Supprime le compte utilisateur et le déconnecte
+   * Affiche un message de confirmation et redirige vers l'accueil
+   *
+   * @returns void
+   */
   public delete(): void {
     this.userService
       .delete(this.sessionService.sessionInformation!.id.toString())
@@ -46,6 +73,12 @@ export class MeComponent implements OnInit, OnDestroy {
       })
   }
 
+  /**
+   * Nettoie les ressources du composant
+   * Complète le subject destroy$ pour déclencher takeUntil sur toutes les subscriptions
+   *
+   * @returns void
+   */
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

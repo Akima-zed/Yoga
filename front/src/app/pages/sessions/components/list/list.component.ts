@@ -8,6 +8,21 @@ import { MaterialModule } from "../../../../shared/material.module";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
+/**
+ * ListComponent - Liste des séances
+ *
+ * Affiche toutes les séances de yoga disponibles:
+ * - Liste avec image, titre, date et description
+ * - Lien pour consulter les détails d'une séance
+ * - Lien pour créer une nouvelle séance (administrateur)
+ * - Affiche l'utilisateur connecté en haut de la page
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'sessions', component: ListComponent }
+ */
 @Component({
   selector: 'app-list',
    standalone: true,

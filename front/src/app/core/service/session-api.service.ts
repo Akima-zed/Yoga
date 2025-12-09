@@ -3,6 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Session } from '../models/session.interface';
 
+/**
+ * SessionApiService - Gestion des séances via API
+ *
+ * Service responsable de:
+ * - Récupérer toutes les séances
+ * - Récupérer une séance spécifique
+ * - Créer une nouvelle séance
+ * - Modifier une séance existante
+ * - Supprimer une séance
+ * - Participer/Annuler une séance
+ * - Communication avec l'API séances
+ *
+ * @injectable
+ * @example
+ * constructor(private sessionApi: SessionApiService) { }
+ * this.sessionApi.all().subscribe(...);
+ */
 @Injectable({
   providedIn: 'root'
 })

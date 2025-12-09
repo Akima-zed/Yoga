@@ -10,6 +10,23 @@ import { MaterialModule } from "../../../../shared/material.module";
 import { CommonModule } from "@angular/common";
 import { Subject, takeUntil, catchError, of, EMPTY } from 'rxjs';
 
+/**
+ * FormComponent - Formulaire de création/modification de séance
+ *
+ * Permet aux administrateurs de:
+ * - Créer une nouvelle séance
+ * - Modifier une séance existante
+ * - Saisir les informations (titre, description, date, professeur)
+ * - Soumettre le formulaire avec validation
+ * - Annuler et revenir à la liste
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'create', component: FormComponent },
+ * { path: 'update/:id', component: FormComponent }
+ */
 @Component({
   selector: 'app-form',
   standalone: true,

@@ -7,6 +7,21 @@ import { MaterialModule } from "../../shared/material.module";
 import { CommonModule } from "@angular/common";
 import { Subject, takeUntil } from 'rxjs';
 
+/**
+ * RegisterComponent - Page d'inscription
+ *
+ * Permet à l'utilisateur de:
+ * - Saisir ses données d'inscription (prénom, nom, email, mot de passe)
+ * - Créer un nouveau compte
+ * - Voir les messages d'erreur de validation
+ * - Se basculer vers la page de connexion
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'register', component: RegisterComponent }
+ */
 @Component({
   selector: 'app-register',
   standalone: true,

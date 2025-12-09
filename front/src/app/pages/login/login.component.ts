@@ -9,6 +9,21 @@ import {MaterialModule} from "../../shared/material.module";
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 
+/**
+ * LoginComponent - Page de connexion
+ *
+ * Permet à l'utilisateur de:
+ * - Saisir son email et mot de passe
+ * - Se connecter à l'application
+ * - Voir les messages d'erreur de connexion
+ * - Basculer la visibilité du mot de passe
+ *
+ * @component
+ * @standalone
+ * @example
+ * // Dans app.routes.ts
+ * { path: 'login', component: LoginComponent }
+ */
 @Component({
   selector: 'app-login',
   standalone: true,

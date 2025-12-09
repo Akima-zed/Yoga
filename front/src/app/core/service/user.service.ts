@@ -3,6 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.interface';
 
+/**
+ * UserService - Gestion des utilisateurs
+ *
+ * Service responsable de:
+ * - Récupérer les informations d'un utilisateur
+ * - Supprimer le compte d'un utilisateur
+ * - Communication avec l'API utilisateurs
+ *
+ * @injectable
+ * @example
+ * constructor(private userService: UserService) { }
+ * this.userService.getById('1').subscribe(...);
+ */
 @Injectable({
   providedIn: 'root'
 })
