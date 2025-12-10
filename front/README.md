@@ -1,5 +1,72 @@
 # Yoga
 
+## Prérequis
+
+- Node.js (version recommandée : >=18)
+- Angular CLI (version 19)
+- Avoir implémenté les tests unitaires, d’intégration et E2E
+
+## Installation et lancement de l’application
+
+1. Cloner le projet :
+	```
+	git clone https://github.com/OpenClassrooms-Student-Center/P5-Full-Stack-testing
+	```
+2. Aller dans le dossier du frontend :
+	```
+	cd yoga/front
+	```
+3. Installer les dépendances :
+	```
+	npm install
+	```
+4. Lancer l’application :
+	```
+	npm run start
+	```
+
+L’application sera accessible sur [http://localhost:4200](http://localhost:4200)
+
+## Lancer et exécuter les différents tests
+
+### Tests unitaires (Jest)
+
+Pour exécuter les tests unitaires :
+```
+npm run test
+```
+Pour exécuter les tests en mode watch :
+```
+npm run test:watch
+```
+
+### Tests E2E (Cypress)
+
+Pour exécuter les tests E2E :
+```
+npm run e2e
+```
+
+## Générer les rapports de couverture
+
+### Rapport de couverture des tests unitaires
+
+Après avoir lancé les tests unitaires, le rapport de couverture est généré automatiquement :
+- `front/coverage/lcov-report/index.html`
+
+### Rapport de couverture des tests E2E
+
+Après avoir lancé les tests E2E, générez le rapport de couverture :
+```
+npm run e2e:coverage
+```
+Le rapport est disponible ici :
+- `front/cypress/coverage/index.html`
+
+## Seuil de couverture
+
+Le projet garantit un seuil de couverture d’au moins **80%** pour chaque indicateur (instructions, branches, etc.) sur le frontend. Vérifiez les rapports pour chaque métrique.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.16.
 
 ## Start the project
