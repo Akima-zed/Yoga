@@ -35,7 +35,7 @@ describe('Session Edit', () => {
 
   it('Modification de session', () => {
     cy.intercept('PUT', '/api/session/1', { statusCode: 200 });
-    cy.visit('/sessions/update/1');
+    cy.visit('http://localhost:4200/sessions/update/1');
     cy.get('input[formControlName=name]').clear().type('Yoga Avancé');
     cy.get('mat-select[formControlName=teacher_id]').click();
     cy.get('mat-option').contains('Prof Yoga').click();
@@ -45,7 +45,7 @@ describe('Session Edit', () => {
   });
 
   it('Erreur si champ obligatoire manquant', () => {
-    cy.visit('/sessions/update/1');
+    cy.visit('http://localhost:4200/sessions/update/1');
     cy.get('input[formControlName=name]').clear();
     cy.get('mat-select[formControlName=teacher_id]').click();
     cy.get('mat-option').contains('Prof Yoga').click();

@@ -12,7 +12,7 @@ describe('Register', () => {
         admin: false
       }
     });
-    cy.visit('/register');
+    cy.visit('http://localhost:4200/register');
     cy.get('input[formControlName=firstName]').type('John');
     cy.get('input[formControlName=lastName]').type('Doe');
     cy.get('input[formControlName=email]').type('new@user.com');
@@ -22,7 +22,7 @@ describe('Register', () => {
   });
 
   it('Erreur si email manquant', () => {
-    cy.visit('/register');
+    cy.visit('http://localhost:4200/register');
     cy.get('input[formControlName=firstName]').type('John');
     cy.get('input[formControlName=lastName]').type('Doe');
     cy.get('input[formControlName=password]').type('password123');
@@ -30,7 +30,7 @@ describe('Register', () => {
   });
 
   it('Erreur si mot de passe manquant', () => {
-    cy.visit('/register');
+    cy.visit('http://localhost:4200/register');
     cy.get('input[formControlName=firstName]').type('John');
     cy.get('input[formControlName=lastName]').type('Doe');
     cy.get('input[formControlName=email]').type('new@user.com');

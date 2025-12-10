@@ -18,13 +18,13 @@ describe('Sessions', () => {
   });
 
   it('Affichage de la liste des sessions', () => {
-    cy.visit('/sessions');
+    cy.visit('http://localhost:4200/sessions');
     cy.contains('Yoga Matin').should('be.visible');
     cy.contains('Yoga Soir').should('be.visible');
   });
 
   it('Boutons Create et Detail visibles pour admin', () => {
-    cy.visit('/sessions');
+    cy.visit('http://localhost:4200/sessions');
     cy.contains('Create').should('be.visible');
     cy.get('button').contains('Detail').should('exist');
   });

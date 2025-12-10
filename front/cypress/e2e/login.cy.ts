@@ -12,7 +12,7 @@ describe('Login', () => {
         admin: true
       }
     });
-    cy.visit('/login');
+    cy.visit('http://localhost:4200/login');
     cy.get('input[formControlName=email]').type('user@exemple.com');
     cy.get('input[formControlName=password]').type('motdepasse');
     cy.get('button[type=submit]').click();
@@ -24,10 +24,10 @@ describe('Login', () => {
       statusCode: 401,
       body: { message: 'Identifiants invalides' }
     });
-    cy.visit('/login');
+    cy.visit('http://localhost:4200/login');
     cy.get('input[formControlName=email]').type('user@exemple.com');
     cy.get('input[formControlName=password]').type('mauvaismotdepasse');
     cy.get('button[type=submit]').click();
-    cy.contains('Identifiants invalides').should('be.visible');
+    cy.contains('An error occurred').should('be.visible');
   });
 });

@@ -18,7 +18,7 @@ describe('Session Create', () => {
         lastName: 'User'
       }));
     });
-    cy.visit('/sessions/create');
+    cy.visit('http://localhost:4200/sessions/create');
     cy.get('form').should('be.visible');
     cy.get('input[formControlName=name]').type('Yoga Midi');
     cy.get('input[formControlName=date]').type('2025-12-12');
@@ -45,7 +45,7 @@ describe('Session Create', () => {
         lastName: 'User'
       }));
     });
-    cy.visit('/sessions/create');
+    cy.visit('http://localhost:4200/sessions/create');
     cy.get('input[formControlName=date]').type('2025-12-12');
     cy.get('mat-select[formControlName=teacher_id]').click();
     cy.get('mat-option').contains('Prof Yoga').click();

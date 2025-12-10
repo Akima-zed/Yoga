@@ -15,7 +15,7 @@ describe('Profil utilisateur', () => {
         lastName: 'User'
       }));
     });
-    cy.visit('/me');
+    cy.visit('http://localhost:4200/me');
     cy.contains('test@user.com').should('exist');
     cy.contains('Test').should('exist');
     cy.contains('User').should('exist');

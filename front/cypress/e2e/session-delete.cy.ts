@@ -29,7 +29,7 @@ describe('Session Delete', () => {
 
   it('Suppression de session', () => {
     cy.intercept('DELETE', '/api/session/1', { statusCode: 200 });
-    cy.visit('/sessions/detail/1');
+    cy.visit('http://localhost:4200/sessions/detail/1');
     cy.get('button').contains('Delete').should('exist').click();
     cy.url().should('include', '/sessions');
   });
