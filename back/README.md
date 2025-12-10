@@ -3,10 +3,61 @@
 Backend de l'application Yoga App !.
 
 
+# Yoga App !
+
+Backend de l'application Yoga App !.
+
 ## Configuration du back
 
     - name: back
     - port: 8080
+
+## Structure du projet
+
+Le projet est composé de deux parties bien distinctes :
+
+- **back/** : Backend Java Spring Boot (ce dossier)
+- **front/** : Frontend Angular (voir README dans le dossier front)
+
+## Couverture de tests
+
+La couverture des branches du backend a été augmentée à plus de 80% pour les classes principales (services, DTOs, payloads, etc.) grâce à des tests unitaires et des cas artificiels (null, extrêmes, etc.).
+
+Pour vérifier la couverture :
+
+```
+mvn clean test jacoco:report
+```
+
+Le rapport détaillé est disponible dans :
+- `target/site/jacoco/index.html`
+- `target/site/jacoco/jacoco.csv`
+
+## Outils et technologies
+
+- **Java 21**
+- **Spring Boot 3.5.5**
+- **JUnit 5** / **Mockito**
+- **JaCoCo** (couverture de tests)
+- **Maven 3.9.3**
+- **Docker / Docker Compose**
+
+## Contribution
+
+Pour contribuer :
+1. Forker le projet
+2. Créer une branche dédiée
+3. Ajouter vos tests et fonctionnalités
+4. Vérifier la couverture (objectif >80%)
+5. Faire une Pull Request
+
+## Documentation
+
+La documentation des services et payloads se trouve dans le dossier `docs/`.
+
+## Séparation avec le front
+
+Le frontend Angular est totalement séparé et se trouve dans le dossier `front/`. Voir le fichier `front/README.md` pour les instructions spécifiques au front.
 
 ## Pré-requis pour le bon fonctionnement du back :
 
@@ -17,14 +68,10 @@ Backend de l'application Yoga App !.
 
 ## Démarrage du back
 Pour démarrer le back, il :
-- démarrer Docker-Desktop sur votre poste de travail local.
-- lancer une console, se placer à la racine du projet et exécuter la commande Maven :
 ```
 mvn spring-boot:run
 ```
 Cette commande va :
-- initialiser le container Docker qui contient la base de données
-- lancer l'application back et le connecter à la base de données précédemment créée
 
 Les traces logs devraient ressemblées à ceci :
 ```
