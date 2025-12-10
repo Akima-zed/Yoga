@@ -1,5 +1,57 @@
 # Yoga App !
 
+## Prérequis
+
+- JDK 21
+- Maven >= 3.9.3
+- Docker & Docker Compose
+- Avoir implémenté les tests unitaires, d’intégration et E2E
+
+## Installation et lancement de l’application
+
+1. Cloner le projet :
+    ```
+    git clone https://github.com/OpenClassrooms-Student-Center/P5-Full-Stack-testing
+    ```
+2. Aller dans le dossier du backend :
+    ```
+    cd yoga/back
+    ```
+3. Installer les dépendances (si besoin) :
+    ```
+    mvn install
+    ```
+4. Démarrer Docker Desktop sur votre poste local
+5. Lancer l’application :
+    ```
+    mvn spring-boot:run
+    ```
+
+L’application sera accessible sur [http://localhost:8080](http://localhost:8080)
+
+## Lancer et exécuter les différents tests
+
+### Tests unitaires et d’intégration (JUnit/Mockito)
+
+Pour exécuter tous les tests :
+```
+mvn test
+```
+
+## Générer les rapports de couverture
+
+Après avoir lancé les tests, générez le rapport de couverture :
+```
+mvn clean test jacoco:report
+```
+Le rapport est disponible ici :
+- `back/target/site/jacoco/index.html`
+- `back/target/site/jacoco/jacoco.csv`
+
+## Seuil de couverture
+
+Le projet garantit un seuil de couverture d’au moins **80%** pour chaque indicateur (instructions, branches, etc.) sur le backend. Vérifiez les rapports pour chaque métrique.
+
 Backend de l'application Yoga App !.
 
 
