@@ -44,8 +44,8 @@ class SessionControllerIT {
     }
 
     @Test
-    void getSessionById_shouldReturnNotFound() throws Exception {
-        mockMvc.perform(get("/api/session/9999").contentType(MediaType.APPLICATION_JSON))
+    void getSessionById_notFound_shouldReturnNotFound() throws Exception {
+        mockMvc.perform(get("/api/session/99999"))
                 .andExpect(status().isNotFound());
     }
 
@@ -57,12 +57,26 @@ class SessionControllerIT {
     }
 
     @Test
+    void getAllSessions_shouldReturnOk() throws Exception {
+        mockMvc.perform(get("/api/session"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
     void createSession_shouldReturnCreated() throws Exception {
         String body = "{\"name\":\"Yoga du soir\"}";
         mockMvc.perform(post("/api/session")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(body))
                 .andExpect(status().isCreated());
+    }
+
+    @Test
+    void createSession_withInvalidData_shouldReturnBadRequest() throws Exception {
+        mockMvc.perform(post("/api/session")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{}"))
+                .andExpect(status().isBadRequest());
     }
 
     @Test

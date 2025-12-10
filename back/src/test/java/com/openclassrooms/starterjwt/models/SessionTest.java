@@ -5,6 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
 class SessionTest {
+        @Test
+        void testBuilderWithNullsAndToString() {
+            Session session = Session.builder().build();
+            assertNull(session.getId());
+            assertNull(session.getName());
+            assertTrue(session.toString().contains("Session"));
+        }
     @Test
     void builder_and_getters_shouldWork() {
         Session session = Session.builder()

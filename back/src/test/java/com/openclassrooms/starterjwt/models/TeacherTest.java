@@ -4,6 +4,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TeacherTest {
+        @Test
+        void testBuilderWithNullsAndToString() {
+            Teacher teacher = Teacher.builder().build();
+            assertNull(teacher.getId());
+            assertNull(teacher.getLastName());
+            assertNull(teacher.getFirstName());
+            assertTrue(teacher.toString().contains("Teacher"));
+        }
     @Test
     void builder_and_getters_shouldWork() {
         Teacher teacher = Teacher.builder()

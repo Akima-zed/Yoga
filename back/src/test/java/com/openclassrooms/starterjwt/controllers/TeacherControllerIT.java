@@ -53,4 +53,16 @@ class TeacherControllerIT {
         mockMvc.perform(get("/api/teacher/9999").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
+
+    @Test
+    void getTeacherById_notFound_shouldReturnNotFound() throws Exception {
+        mockMvc.perform(get("/api/teacher/99999"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void getAllTeachers_shouldReturnOk() throws Exception {
+        mockMvc.perform(get("/api/teacher"))
+                .andExpect(status().isOk());
+    }
 }

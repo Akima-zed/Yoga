@@ -4,6 +4,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
+        @Test
+        void testBuilderWithNullsAndToString() {
+            User user = User.builder().build();
+            assertNull(user.getId());
+            assertNull(user.getEmail());
+            assertNull(user.getLastName());
+            assertNull(user.getFirstName());
+            assertFalse(user.isAdmin());
+            assertTrue(user.toString().contains("User"));
+        }
     @Test
     void builder_and_getters_shouldWork() {
         User user = User.builder()

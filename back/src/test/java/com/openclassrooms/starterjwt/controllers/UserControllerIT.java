@@ -50,6 +50,12 @@ class UserControllerIT {
     }
 
     @Test
+    void getUserById_notFound_shouldReturnNotFound() throws Exception {
+        mockMvc.perform(get("/api/user/99999"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
     void getAllUsers_shouldReturnList() throws Exception {
         mockMvc.perform(get("/api/user").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
