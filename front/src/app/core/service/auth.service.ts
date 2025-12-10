@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginRequest } from '../models/loginRequest.interface';
 import { RegisterRequest } from '../models/registerRequest.interface';
-import { SessionInformation } from 'src/app/core/models/sessionInformation.interface';
+import { SessionInformation } from '../models/sessionInformation.interface';
 
 /**
  * AuthService - Gestion de l'authentification
