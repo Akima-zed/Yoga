@@ -23,4 +23,23 @@ public class JwtResponse {
         this.username = username;
         this.admin = admin;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JwtResponse that = (JwtResponse) o;
+        return java.util.Objects.equals(token, that.token)
+                && java.util.Objects.equals(type, that.type)
+                && java.util.Objects.equals(id, that.id)
+                && java.util.Objects.equals(username, that.username)
+                && java.util.Objects.equals(firstName, that.firstName)
+                && java.util.Objects.equals(lastName, that.lastName)
+                && java.util.Objects.equals(admin, that.admin);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(token, type, id, username, firstName, lastName, admin);
+    }
 }

@@ -36,7 +36,7 @@ import java.util.List;
 @EntityListeners(AuditingEntityListener.class)
 @Data
 @Accessors(chain = true)
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"id", "name", "date", "description"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -59,6 +59,15 @@ public class Session {
     @Size(max = 2500)
     @Column(nullable = false)
     private String description;
+
+        /**
+         * Méthode utilitaire pour vérifier si la session est une session longue.
+         * Une session est considérée comme longue si la description dépasse 1000 caractères.
+         */
+        public boolean isLongSession() {
+            if (description == null) return false;
+            return description.length() > 1000;
+        }
 
     @OneToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id")

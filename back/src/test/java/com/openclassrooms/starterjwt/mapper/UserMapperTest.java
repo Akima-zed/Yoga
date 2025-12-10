@@ -8,6 +8,31 @@ import org.mapstruct.factory.Mappers;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserMapperTest {
+        @Test
+        void toEntity_shouldHandleNullDto() {
+            User user = mapper.toEntity((UserDto) null);
+            assertNull(user);
+        }
+
+        @Test
+        void toDto_shouldHandleNullUser() {
+            UserDto dto = mapper.toDto((com.openclassrooms.starterjwt.models.User) null);
+            assertNull(dto);
+        }
+
+        @Test
+        void toEntity_shouldHandleEmptyDtoList() {
+            var userList = mapper.toEntity(java.util.Collections.<UserDto>emptyList());
+            assertNotNull(userList);
+            assertTrue(userList.isEmpty());
+        }
+
+        @Test
+        void toDto_shouldHandleEmptyUserList() {
+            var dtoList = mapper.toDto(java.util.Collections.<com.openclassrooms.starterjwt.models.User>emptyList());
+            assertNotNull(dtoList);
+            assertTrue(dtoList.isEmpty());
+        }
     UserMapper mapper = Mappers.getMapper(UserMapper.class);
 
     @Test

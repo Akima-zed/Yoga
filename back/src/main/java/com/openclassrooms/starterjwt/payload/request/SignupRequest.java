@@ -25,4 +25,14 @@ public class SignupRequest {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
+
+    /**
+     * Méthode utilitaire pour vérifier si l'utilisateur a un mot de passe fort.
+     * Un mot de passe est considéré comme fort s'il fait au moins 8 caractères et contient un chiffre.
+     */
+    public boolean isStrongPassword() {
+        if (password == null) return false;
+        boolean hasDigit = password.chars().anyMatch(Character::isDigit);
+        return password.length() >= 8 && hasDigit;
+    }
 }

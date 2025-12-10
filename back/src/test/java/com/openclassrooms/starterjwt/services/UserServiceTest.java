@@ -103,4 +103,65 @@ class UserServiceTest {
         when(userRepository.existsByEmail("notexists@test.com")).thenReturn(false);
         assertFalse(userService.existsByEmail("notexists@test.com"));
     }
+
+    @Test
+    void create_shouldHandleExtremeValues() {
+        when(userRepository.existsByEmail("")).thenReturn(false);
+        User userToSave = User.builder()
+                .email("")
+                .lastName("")
+                .firstName("")
+                .password("")
+                .admin(true)
+                .build();
+        when(userRepository.save(any(User.class))).thenReturn(userToSave);
+        User result = userService.create("", "", "", "", true);
+        assertEquals("", result.getEmail());
+        assertTrue(result.isAdmin());
+    }
+
+    @Test
+    void create_shouldHandleSpecialCharacters() {
+        String specialEmail = "tést+é@exämple.com";
+        when(userRepository.existsByEmail(specialEmail)).thenReturn(false);
+        User userToSave = User.builder()
+                .email(specialEmail)
+                .lastName("Làst")
+                .firstName("Fïrst")
+                .password("pässwörd")
+                .admin(false)
+                .build();
+        when(userRepository.save(any(User.class))).thenReturn(userToSave);
+        User result = userService.create(specialEmail, "Làst", "Fïrst", "pässwörd", false);
+        assertEquals(specialEmail, result.getEmail());
+        assertEquals("Làst", result.getLastName());
+        assertEquals("Fïrst", result.getFirstName());
+        assertEquals("pässwörd", result.getPassword());
+    }
+
+    @Test
+    void create_shouldHandleNullSaveResult() {
+        when(userRepository.existsByEmail("nullsave@test.com")).thenReturn(false);
+        when(userRepository.save(any(User.class))).thenReturn(null);
+        User result = userService.create("nullsave@test.com", "Doe", "John", "pass", false);
+        assertNull(result);
+    }
+
+    @Test
+    void findById_shouldHandleNullId() {
+        assertThrows(NullPointerException.class, () -> userService.findById(null));
+    }
+
+    @Test
+    void findByEmail_shouldHandleNullEmail() {
+        assertThrows(NullPointerException.class, () -> userService.findByEmail(null));
+    }
+
+    @Test
+    void create_shouldHandleNullParams() {
+        assertThrows(NullPointerException.class, () -> userService.create(null, "Doe", "John", "pass", false));
+        assertThrows(NullPointerException.class, () -> userService.create("a@b.com", null, "John", "pass", false));
+        assertThrows(NullPointerException.class, () -> userService.create("a@b.com", "Doe", null, "pass", false));
+        assertThrows(NullPointerException.class, () -> userService.create("a@b.com", "Doe", "John", null, false));
+    }
 }

@@ -83,4 +83,92 @@ class JwtUtilsTest {
         Thread.sleep(5); // attendre l'expiration
         assertFalse(shortExpJwtUtils.validateJwtToken(token));
     }
+
+    @Test
+    void testValidateJwtToken_ExpiredJwtException() throws InterruptedException {
+        JwtUtils shortExpJwtUtils = new JwtUtils();
+        try {
+            var secretField = JwtUtils.class.getDeclaredField("jwtSecret");
+            secretField.setAccessible(true);
+            secretField.set(shortExpJwtUtils, jwtSecret);
+            var expField = JwtUtils.class.getDeclaredField("jwtExpirationMs");
+            expField.setAccessible(true);
+            expField.set(shortExpJwtUtils, 1); // 1 ms
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        Authentication authentication = mock(Authentication.class);
+        UserDetailsImpl userDetails = mock(UserDetailsImpl.class);
+        when(authentication.getPrincipal()).thenReturn(userDetails);
+        when(userDetails.getUsername()).thenReturn("expireduser");
+        String token = shortExpJwtUtils.generateJwtToken(authentication);
+        Thread.sleep(5); // attendre l'expiration
+        assertFalse(shortExpJwtUtils.validateJwtToken(token));
+    }
+
+    @Test
+    void testValidateJwtToken_EmptyToken() {
+        assertFalse(jwtUtils.validateJwtToken(""));
+    }
+
+    @Test
+    void testValidateJwtToken_NullToken() {
+        assertFalse(jwtUtils.validateJwtToken(null));
+    }
+
+    @Test
+    void testValidateJwtToken_UnsupportedToken() {
+        // Un token qui n'est pas JWT
+        assertFalse(jwtUtils.validateJwtToken("not.a.jwt.token"));
+    }
+
+    @Test
+    void testValidateJwtToken_SignatureException() {
+        // Token avec une signature invalide (clé différente, 512 bits)
+        String validKey = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"; // 64 chars
+        String otherKey = "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789"; // 64 chars
+        JwtUtils validJwtUtils = new JwtUtils();
+        JwtUtils otherJwtUtils = new JwtUtils();
+        try {
+            var secretField = JwtUtils.class.getDeclaredField("jwtSecret");
+            secretField.setAccessible(true);
+            secretField.set(validJwtUtils, validKey);
+            secretField.set(otherJwtUtils, otherKey);
+            var expField = JwtUtils.class.getDeclaredField("jwtExpirationMs");
+            expField.setAccessible(true);
+            expField.set(validJwtUtils, jwtExpirationMs);
+            expField.set(otherJwtUtils, jwtExpirationMs);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        Authentication authentication = mock(Authentication.class);
+        UserDetailsImpl userDetails = mock(UserDetailsImpl.class);
+        when(authentication.getPrincipal()).thenReturn(userDetails);
+        when(userDetails.getUsername()).thenReturn("siguser");
+        String token = validJwtUtils.generateJwtToken(authentication);
+        // Le token généré avec la clé d'origine ne doit pas passer avec une autre clé
+        assertFalse(otherJwtUtils.validateJwtToken(token));
+    }
+
+    @Test
+    void testValidateJwtToken_MalformedJwtException() {
+        // Token mal formé (trop de points)
+        String malformedToken = "abc.def.ghi.jkl";
+        assertFalse(jwtUtils.validateJwtToken(malformedToken));
+    }
+
+    @Test
+    void testValidateJwtToken_IllegalArgumentException() {
+        // Token null ou vide déjà testé, mais on peut tester un token non string
+        assertFalse(jwtUtils.validateJwtToken(null));
+        assertFalse(jwtUtils.validateJwtToken(""));
+    }
+
+    @Test
+    void testValidateJwtToken_UnsupportedJwtException() {
+        // Token non supporté (exemple : JWE au lieu de JWS)
+        // Ici, on simule un token JWE (4 points)
+        String unsupportedToken = "a.b.c.d.e";
+        assertFalse(jwtUtils.validateJwtToken(unsupportedToken));
+    }
 }

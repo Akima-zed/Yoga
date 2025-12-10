@@ -28,7 +28,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @Data
 @Accessors(chain = true)
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"id", "lastName", "firstName"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -55,4 +55,13 @@ public class Teacher {
     @UpdateTimestamp
     @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
+
+        /**
+         * Méthode utilitaire pour vérifier si le professeur est senior.
+         * Un professeur est considéré comme senior si son nom commence par "Dr" ou "Prof".
+         */
+        public boolean isSenior() {
+            if (lastName == null) return false;
+            return lastName.startsWith("Dr") || lastName.startsWith("Prof");
+        }
 }

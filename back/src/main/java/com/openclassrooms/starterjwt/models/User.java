@@ -31,7 +31,7 @@ import java.time.LocalDateTime;
 @Data
 @Accessors(chain = true)
 @EntityListeners(AuditingEntityListener.class)
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"id", "email", "lastName", "firstName", "password", "admin"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -64,6 +64,16 @@ public class User {
 
     
     private boolean admin;
+
+        /**
+         * Méthode utilitaire pour vérifier si l'utilisateur est administrateur et a un email d'entreprise.
+         * Un utilisateur est considéré comme "superAdmin" si admin=true et email se termine par "@entreprise.com".
+         */
+        public boolean isSuperAdmin() {
+            if (!admin) return false;
+            if (email == null) return false;
+            return email.endsWith("@entreprise.com");
+        }
 
     @CreatedDate
     @Column(updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

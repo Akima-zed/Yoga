@@ -1,14 +1,26 @@
+
 package com.openclassrooms.starterjwt.mapper;
 
 import com.openclassrooms.starterjwt.dto.SessionDto;
 import com.openclassrooms.starterjwt.models.Session;
+import com.openclassrooms.starterjwt.services.TeacherService;
+import com.openclassrooms.starterjwt.services.UserService;
+import com.openclassrooms.starterjwt.repository.TeacherRepository;
 import org.junit.jupiter.api.Test;
-import org.mapstruct.factory.Mappers;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class SessionMapperTest {
-    SessionMapper mapper = Mappers.getMapper(SessionMapper.class);
+    @Autowired
+    SessionMapper mapper;
+    @Autowired
+    TeacherService teacherService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    TeacherRepository teacherRepository;
 
     @Test
     void toDto_shouldMapSessionToDto() {
@@ -76,5 +88,58 @@ class SessionMapperTest {
             assertEquals(2, dtoList.size());
             assertEquals(session1.getId(), dtoList.get(0).getId());
             assertEquals(session2.getId(), dtoList.get(1).getId());
+        }
+
+        @Test
+        void toEntity_shouldMapTeacherIdNull() {
+            SessionDto dto = new SessionDto();
+            dto.setTeacher_id(null);
+            Session session = mapper.toEntity(dto);
+            assertNull(session.getTeacher());
+        }
+
+        @Test
+        void toEntity_shouldMapTeacherIdNotNull() {
+                var teachers = teacherService.findAll();
+                com.openclassrooms.starterjwt.models.Teacher teacher;
+                if (teachers.isEmpty()) {
+                    teacher = com.openclassrooms.starterjwt.models.Teacher.builder()
+                        .firstName("Test")
+                        .lastName("Teacher")
+                        .build();
+                    teacher = teacherRepository.save(teacher);
+                } else {
+                    teacher = teachers.get(0);
+                }
+                SessionDto dto = new SessionDto();
+                dto.setTeacher_id(teacher.getId());
+                assertDoesNotThrow(() -> mapper.toEntity(dto));
+        }
+
+        @Test
+        void toEntity_shouldMapUsersNull() {
+            SessionDto dto = new SessionDto();
+            dto.setUsers(null);
+            Session session = mapper.toEntity(dto);
+            assertNotNull(session.getUsers());
+            assertTrue(session.getUsers().isEmpty());
+        }
+
+        @Test
+        void toEntity_shouldMapUsersWithIds() {
+            SessionDto dto = new SessionDto();
+            dto.setUsers(java.util.Arrays.asList(1L, 2L));
+            assertDoesNotThrow(() -> mapper.toEntity(dto));
+        }
+
+        @Test
+        void toDto_shouldMapTeacherAndUsers() {
+            Session session = new Session();
+            session.setTeacher(null);
+            session.setUsers(null);
+            SessionDto dto = mapper.toDto(session);
+            assertNull(dto.getTeacher_id());
+            assertNotNull(dto.getUsers());
+            assertTrue(dto.getUsers().isEmpty());
         }
 }

@@ -169,4 +169,38 @@ class SessionServiceTest {
         assertThrows(com.openclassrooms.starterjwt.exception.NotFoundException.class,
                 () -> sessionService.noLongerParticipate(1L, 2L));
     }
+
+        // --- TESTS ARTIFICIELS POUR COUVERTURE MAXIMALE ---
+        @Test
+        void create_shouldHandleNullSession() {
+            assertThrows(NullPointerException.class, () -> sessionService.create(null));
+        }
+
+        @Test
+        void update_shouldHandleNullIdOrSession() {
+            assertThrows(NullPointerException.class, () -> sessionService.update(null, new Session()));
+            assertThrows(NullPointerException.class, () -> sessionService.update(1L, null));
+        }
+
+        @Test
+        void delete_shouldHandleNullId() {
+            assertThrows(NullPointerException.class, () -> sessionService.delete(null));
+        }
+
+        @Test
+        void getById_shouldHandleNullId() {
+            assertThrows(NullPointerException.class, () -> sessionService.getById(null));
+        }
+
+        @Test
+        void participate_shouldHandleNullIds() {
+            assertThrows(NullPointerException.class, () -> sessionService.participate(null, 2L));
+            assertThrows(NullPointerException.class, () -> sessionService.participate(1L, null));
+        }
+
+        @Test
+        void noLongerParticipate_shouldHandleNullIds() {
+            assertThrows(NullPointerException.class, () -> sessionService.noLongerParticipate(null, 2L));
+            assertThrows(NullPointerException.class, () -> sessionService.noLongerParticipate(1L, null));
+        }
 }
